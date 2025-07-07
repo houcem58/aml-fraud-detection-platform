@@ -1,0 +1,121 @@
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+
+# ── Virtual environments ───────────────────────────────────────────────────────
+venv/
+.venv/
+env/
+
+# ── Jupyter ────────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+
+# ── Secrets / credentials ─────────────────────────────────────────────────────
+.env
+*.key
+*.pem
+
+# ── OS / editor ────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/
+
+# ── Logs (all runtime logs) ───────────────────────────────────────────────────
+logs/
+outputs/logs/
+*.log
+
+# ── Temp / swap / backup ──────────────────────────────────────────────────────
+*.tmp
+*.bak
+*~
+*.swp
+*.swo
+_tmp_*
+
+# ── LaTeX build artifacts (keep .tex and .pdf) ────────────────────────────────
+outputs/paper_ieee.aux
+outputs/paper_ieee.log
+outputs/paper_ieee.out
+
+# ── Large raw IBM AML benchmark datasets (download separately via README) ─────
+data/aml/HI-Small_Trans.csv
+data/aml/HI-Small_accounts.csv
+
+# ── Large IEEE-CIS raw training samples ───────────────────────────────────────
+data/train_identity.csv
+data/train_tx_sample.csv
+
+# ── Production runtime data (not committed) ───────────────────────────────────
+data/production/
+
+# ── Heavy training intermediates (moved to archive_excluded) ──────────────────
+outputs/aml_models/
+
+# ── Runtime outputs (generated during execution) ──────────────────────────────
+outputs/audit/
+outputs/email_log.json
+outputs/logs/emails_sent.jsonl
+outputs/rlhf/
+
+# ── Runtime memory / checkpoints (directory kept via .gitkeep) ────────────────
+memory/*
+!memory/.gitkeep
+checkpoints/*
+!checkpoints/.gitkeep
+
+# ── Development archives (safe to ignore; content in archive_excluded/) ───────
+_archive/
+_archive_safe_before_deploy/
+archive_excluded/
+
+# ── Test evaluation artifacts ─────────────────────────────────────────────────
+audit_report.txt
+labels.txt
+preds.txt
+
+# ── Internal project notes (not for public repo) ──────────────────────────────
+PROJECT_STATUS.md
+START_HERE.md
+CLEANUP_PLAN.md
+RAPPORT_TECHNIQUE.md
+
+# ── Local organization notes (personal, not for public repo) ─────────────────
+_local_organization/
+
+# ── AML dataset (large, download separately) ──────────────────────────────────
+data/aml/
+
+# ── Tunisia dataset ───────────────────────────────────────────────────────────
+data/tunisia/
+
+# ── Runtime logs (already covered by outputs/logs/ above) ────────────────────
+outputs/logs/
+
+# ── Auto-generated backup files ───────────────────────────────────────────────
+*.bak_*
+
+# ── Merged archives (heavy, not needed in public repo) ────────────────────────
+archive/
+
+# ── Trained model artifacts (large binaries — download separately) ──────────
+outputs/models/
+
+# ── Research / paper materials (private) ───────────────────────────────────
+paper/
+rapport/
+soutenance/
+rapport_avant_finalisation_backup/
+_dse_orcid_update_tmp/
+
+# ── Conference materials ────────────────────────────────────────────────────
+CITEF_2026_FraudAML_Insight_Karim_Bettaieb/
+
+# ── Internal manifests ─────────────────────────────────────────────────────
+PRODUCTION_MANIFEST.md
+RESEARCH_MANIFEST.md
+
+# ── Claude settings ─────────────────────────────────────────────────────────
+.claude/
