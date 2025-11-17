@@ -182,7 +182,7 @@ def score_transaction(tx: dict) -> None:
     if decision in ("BLOCK", "REVIEW"):
         print()
         print(f"  Audit note: Score {final:.2f} {'(regulatory override)' if aml >= 0.75 else ''}")
-        print(f"  -> Routed to compliance review queue.")
+        print("  -> Routed to compliance review queue.")
 
     print(f"{'='*60}\n")
 
