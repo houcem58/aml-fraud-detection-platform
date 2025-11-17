@@ -6,6 +6,7 @@
 
 **Graph Neural Networks · Ensemble ML · Kafka Streaming · SHAP · RLHF**
 
+[![CI](https://github.com/houcem58/aml-fraud-detection-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/houcem58/aml-fraud-detection-platform/actions/workflows/ci.yml)
 [![Research](https://img.shields.io/badge/Research-IEEE%20Access-orange)](docs/EvaluationResults.md)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)](docs/Architecture.md)
