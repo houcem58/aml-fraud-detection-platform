@@ -265,15 +265,10 @@ See [demo/README.md](demo/README.md) for full instructions.
 
 Applied AI research conducted at LATICE Laboratory (ENSIT, Université de Tunis).
 
-> Houcem Hammami —
-> *Coverage-Aware Evaluation of Account-Risk-Enriched Graph Learning
-> for Anti-Money Laundering Detection*
-> Published at **IEEE Access**
-
-Key findings:
+Key findings from the full evaluation:
 - Account-risk enrichment is not robust under strict GroupKFold — gain collapses at cold-start
 - XGBoost + GNN stacking achieves AUC 0.925 ± 0.031 under account-disjoint cross-validation
-- Context-aware fusion outperforms fixed-weight ensembles by 4-7% AUC on dense transaction clusters
+- Context-aware fusion outperforms fixed-weight ensembles by 4–7% AUC on dense transaction clusters
 
 ---
 

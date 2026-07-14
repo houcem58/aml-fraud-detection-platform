@@ -65,17 +65,9 @@ using expert labels as ground truth.
 
 ## About the Research
 
-**Q: Where is the manuscript?**
+**Q: Where can I learn more about the evaluation methodology?**
 
-The manuscript "Coverage-Aware Evaluation of Account-Risk-Enriched Graph Learning
-for Anti-Money Laundering Detection" was published at IEEE Access. Contact
-houcem0508@gmail.com for access.
-
-**Q: Why publish at IEEE Access rather than a top ML venue?**
-
-The work's primary contribution is applied and empirical — demonstrating the
-cold-start evaluation gap for GNN-based AML systems and providing a reproducible
-evaluation protocol for the AML research community. IEEE Access's scope (broad
-engineering with rigorous evaluation) fits the work's applied focus. The honest
-evaluation design (documenting where the system fails, not just where it succeeds)
-is itself a contribution to applied AML research.
+The evaluation methodology — GroupKFold account-disjoint splitting, cold-start
+analysis, and the GNN embedding transfer approach — is documented in full in
+[docs/EvaluationResults.md](EvaluationResults.md). Contact houcem0508@gmail.com
+for further details.
