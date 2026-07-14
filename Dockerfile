@@ -2,9 +2,6 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-
 COPY . .
 
 LABEL org.opencontainers.image.source="https://github.com/houcem58/aml-fraud-detection-platform"

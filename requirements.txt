@@ -1,0 +1,1 @@
+# No third-party dependencies — demo uses Python stdlib only
