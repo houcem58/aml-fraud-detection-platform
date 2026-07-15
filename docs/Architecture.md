@@ -160,3 +160,30 @@ Every transaction produces an immutable audit record:
 
 Records are written to SQLite for development and PostgreSQL for production,
 with row-level integrity checks and no-delete enforcement for regulatory retention.
+
+---
+
+## Component Diagram
+
+```mermaid
+flowchart TD
+    CB[("Core Banking / Client\nPOST /transactions")] -->|JWT Bearer| API["FastAPI :8000\nauth · schema validation · enrichment"]
+    API -->|KafkaProducer| FT[("fraud.transactions\nKafka topic")]
+    FT --> KSS["KafkaStreamingSystem\nroutes by tx_type"]
+
+    KSS --> XGB["XGBoost\ntabular score"]
+    KSS --> LGB["LightGBM\nbehavioral score"]
+    KSS --> GNN["HybridGAT GNN\n64-d graph embedding"]
+
+    XGB & LGB & GNN --> FUS["Context-Aware Fusion\nISOLATED: XGB=0.85 GNN=0.05\nDENSE: XGB=0.40 GNN=0.55"]
+
+    FUS --> AML["AML Rule Engine\nBCT · ACPR · FinCEN"]
+    AML --> DE["Decision Engine\nALLOW / REVIEW / BLOCK"]
+    DE --> SHAP["SHAP Explainability\ntop-10 features per decision"]
+    SHAP --> LLM["Mistral 7B\naudit report for REVIEW/BLOCK"]
+
+    DE --> FA[("fraud.alerts")]
+    FA --> ED["Expert Dashboard :7860\ncompliance review · RLHF"]
+    ED --> RLH[("fraud.rlhf_feedback")]
+    RLH --> NF["NightFineTunerV2\nnightly 22:00 · validation gate"]
+```
