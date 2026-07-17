@@ -1,0 +1,55 @@
+name: Bug Report
+description: Report a scoring error, detection issue, or platform component failure
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: component
+    attributes:
+      label: Affected component
+      options:
+        - Transaction API (FastAPI :8000)
+        - Kafka Streaming Engine
+        - XGBoost Tabular Scorer
+        - HybridGAT GNN
+        - AML Rule Engine
+        - Context-Aware Fusion
+        - Decision Engine
+        - SHAP Explainability
+        - LLM Audit Report (Mistral 7B)
+        - Expert Dashboard (:7860)
+        - MLOps Dashboard (:7861)
+        - NightFineTunerV2
+        - Demo scripts
+        - Docker / infrastructure
+        - CI pipeline
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+    validations:
+      required: true
+
+  - type: textarea
+    id: transaction
+    attributes:
+      label: Example transaction (if scoring-related)
+      description: Paste the transaction JSON or use the demo script format
+      render: json
+
+  - type: textarea
+    id: error
+    attributes:
+      label: Error output
+      render: shell
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Before submitting
+      options:
+        - label: I ran the demo script to confirm the issue is reproducible
+        - label: I checked that no sensitive data is included in this issue
